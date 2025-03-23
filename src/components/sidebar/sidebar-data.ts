@@ -51,4 +51,57 @@ export const sidebarData: SidebarItemType[] = [
       },
     ],
   },
+  {
+    id: 4,
+    nameEnglish: "Interactive Shape",
+    url: '/interactive-shape',
+    parentId: null,
+    icon: '',
+    modulePrivilege: []
+  },
+  {
+    id: 5,
+    nameEnglish: "Closure Stale Ref",
+    url: '/closure-stale-reference',
+    parentId: null,
+    icon: '',
+    modulePrivilege: []
+  },
+  {
+    id: 6,
+    nameEnglish: "Overlapping Cicles",
+    url: '/overlapping-circles',
+    parentId: null,
+    icon: '',
+    modulePrivilege: []
+  },
+  // {
+  //   id: 6,
+  //   nameEnglish: "Tic Tac Toe",
+  //   url: '/tic-tac-toe',
+  //   parentId: null,
+  //   icon: '',
+  //   modulePrivilege: []
+  // },
+
+  {
+    id: 6,
+    nameEnglish: "Intersection Observer",
+    url: '/intersection-observer',
+    parentId: null,
+    icon: '',
+    modulePrivilege: []
+  },
+  {
+    id: 7,
+    nameEnglish: "Infinite Scrolling",
+    url: '/',
+    parentId: null,
+    icon: '',
+    modulePrivilege: [
+      { id: 9, nameEnglish: "Scroll Height", url: '/scroll-height', parentId: 7, icon: '', modulePrivilege: [] },
+      { id: 10, nameEnglish: "Intersection Observer", url: '/intersection-observer-scroll', parentId: 7, icon: '', modulePrivilege: [] }
+    ]
+  }
+
 ];

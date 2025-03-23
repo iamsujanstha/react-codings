@@ -1,0 +1,15 @@
+.scroll-height-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 600px;
+  width: 600px;
+  overflow-y: scroll;
+
+  .row {
+    background-color: rgb(173, 253, 253);
+    padding: 8px;
+    border-radius: 8px;
+  }
+}
