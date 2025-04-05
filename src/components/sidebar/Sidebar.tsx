@@ -3,12 +3,15 @@ import { sidebarData, SidebarItemType } from "./sidebar-data";
 import { FaAngleRight } from "react-icons/fa6";
 import { useState } from "react";
 import clsx from "clsx";
+import React from "react";
 
 interface SidebarProps {
   menuData?: SidebarItemType[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ menuData = sidebarData }) => {
+  console.log('render');
+
   const renderMenu = (items: SidebarItemType[]) => {
     return (
       <ul className="flex flex-col">
@@ -63,4 +66,4 @@ const MenuItem: React.FC<{ item: SidebarItemType }> = ({ item }) => {
   );
 };
 
-export default Sidebar;
+export default React.memo(Sidebar);

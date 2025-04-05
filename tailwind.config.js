@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       width: {
-        'calc-main': 'calc(100% - 12rem - 0.5rem)', // Custom width for the main content
+        'calc-main': 'calc(100% - 12rem - 0.5rem)',
       },
     },
   },
