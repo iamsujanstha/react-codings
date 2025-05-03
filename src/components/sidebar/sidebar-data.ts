@@ -1,107 +1,90 @@
-// Define the SidebarItemType type
-export interface SidebarItemType {
-  id: number;
+export interface SidebarItem {
+  id: string; // Changed to string for better readability
   nameEnglish: string;
   url: string;
-  parentId: number | null; // Allow null for top-level items
+  parentId: string | null;
   icon: string;
-  modulePrivilege: SidebarItemType[]; // Recursive type for nested privileges
+  children?: SidebarItem[]; // Renamed from modulePrivilege to children for clarity
 }
 
-// Example data with the correct type
-export const sidebarData: SidebarItemType[] = [
+// sidebarData.ts
+export const sidebarData: SidebarItem[] = [
   {
-    id: 1,
-    nameEnglish: "Otp Module",
+    id: "otp-module",
+    nameEnglish: "OTP Module",
     url: "/otp",
     parentId: null,
     icon: "dashboard-icon",
-    modulePrivilege: [],
+    children: []
   },
   {
-    id: 2,
+    id: "masking-number",
     nameEnglish: "Masking Number",
     url: "/masking",
     parentId: null,
     icon: "dashboard-icon",
-    modulePrivilege: [],
+    children: []
   },
   {
-    id: 3,
-    nameEnglish: "Settings",
-    url: "",
-    parentId: null,
-    icon: "settings-icon",
-    modulePrivilege: [
-      {
-        id: 3,
-        nameEnglish: "User Management",
-        url: "/settings/user-management",
-        parentId: 2,
-        icon: "user-icon",
-        modulePrivilege: [],
-      },
-      {
-        id: 4,
-        nameEnglish: "Roles",
-        url: "/settings/roles",
-        parentId: 2,
-        icon: "roles-icon",
-        modulePrivilege: [],
-      },
-    ],
-  },
-  {
-    id: 4,
+    id: "interactive-shape",
     nameEnglish: "Interactive Shape",
     url: '/interactive-shape',
     parentId: null,
-    icon: '',
-    modulePrivilege: []
+    icon: 'shape-icon',
+    children: []
   },
   {
-    id: 5,
-    nameEnglish: "Closure Stale Ref",
+    id: "closure-stale-ref",
+    nameEnglish: "Closure Stale Reference",
     url: '/closure-stale-reference',
     parentId: null,
-    icon: '',
-    modulePrivilege: []
+    icon: 'code-icon',
+    children: []
   },
   {
-    id: 6,
-    nameEnglish: "Overlapping Cicles",
+    id: "overlapping-circles",
+    nameEnglish: "Overlapping Circles",
     url: '/overlapping-circles',
     parentId: null,
-    icon: '',
-    modulePrivilege: []
+    icon: 'circle-icon',
+    children: []
   },
-  // {
-  //   id: 6,
-  //   nameEnglish: "Tic Tac Toe",
-  //   url: '/tic-tac-toe',
-  //   parentId: null,
-  //   icon: '',
-  //   modulePrivilege: []
-  // },
-
   {
-    id: 6,
+    id: "intersection-observer",
     nameEnglish: "Intersection Observer",
     url: '/intersection-observer',
     parentId: null,
-    icon: '',
-    modulePrivilege: []
+    icon: 'observer-icon',
+    children: []
   },
   {
-    id: 7,
+    id: "infinite-scrolling",
     nameEnglish: "Infinite Scrolling",
-    url: '/',
+    url: '/infinite-scrolling',
     parentId: null,
-    icon: '',
-    modulePrivilege: [
-      { id: 9, nameEnglish: "Scroll Height", url: '/scroll-height', parentId: 7, icon: '', modulePrivilege: [] },
-      { id: 10, nameEnglish: "Intersection Observer", url: '/intersection-observer-scroll', parentId: 7, icon: '', modulePrivilege: [] }
+    icon: 'scroll-icon',
+    children: [
+      {
+        id: "scroll-height",
+        nameEnglish: "Scroll Height",
+        url: '/scroll-height',
+        parentId: "infinite-scrolling",
+        icon: 'measure-icon'
+      },
+      {
+        id: "intersection-observer-scroll",
+        nameEnglish: "Intersection Observer",
+        url: '/intersection-observer-scroll',
+        parentId: "infinite-scrolling",
+        icon: 'observer-icon'
+      }
     ]
+  },
+  {
+    id: "popover",
+    nameEnglish: "Popover",
+    url: '/popover',
+    parentId: null,
+    icon: 'popover-icon'
   }
-
 ];

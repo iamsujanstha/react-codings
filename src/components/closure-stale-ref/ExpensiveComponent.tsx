@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavToggle } from '../../providers/NavProvider';
+import { useNavToggle } from '../../contexts/nav-context';
 // import { useNav } from '../../hooks/useNav';
 
 const Expensive = ({ clickHandler }: { clickHandler: () => void }) => {

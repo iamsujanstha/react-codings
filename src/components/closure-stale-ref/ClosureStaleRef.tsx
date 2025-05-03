@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
 import Expensive from './ExpensiveComponent';
-import { useNavCollapsed } from '../../providers/NavProvider';
+import { useNavCollapsed } from '../../contexts/nav-context';
 
 export default function ClosureStaleRef() {
   const collapsed = useNavCollapsed();

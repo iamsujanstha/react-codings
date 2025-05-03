@@ -1,14 +1,12 @@
 import { Outlet } from 'react-router'
 import Sidebar from '../components/sidebar/Sidebar'
 import { GiHamburgerMenu } from "react-icons/gi"
-import { useNavCollapsed, useNavToggle } from '../providers/NavProvider'
+import { useNav } from '../hooks/useNav'
 // import { useNav } from '../hooks/useNav'
 
 const MainLayout = () => {
-  const collapsed = useNavCollapsed();
-  const toggle = useNavToggle();
 
-  // const { collapsed, toggle } = useNav();
+  const { collapsed, toggle } = useNav();
 
   return (
     <div className="w-full flex flex-row h-screen gap-2 overflow-hidden">

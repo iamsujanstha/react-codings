@@ -1,10 +1,8 @@
-import React from "react";
-import { NavContext } from "../providers/NavController";
+import { useNavCollapsed, useNavToggle } from "../contexts/nav-context";
 
-export const useNav = () => {
-  const context = React.useContext(NavContext);
-  if (!context) {
-    throw new Error("useNav must be used within a NavController");
-  }
-  return context;
+export const useNav = (): { collapsed: boolean; toggle: () => void } => {
+  return {
+    collapsed: useNavCollapsed(),
+    toggle: useNavToggle(),
+  };
 };

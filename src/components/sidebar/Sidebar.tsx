@@ -1,18 +1,18 @@
 import { NavLink, useLocation } from "react-router";
-import { sidebarData, SidebarItemType } from "./sidebar-data";
+import { sidebarData, SidebarItem } from "./sidebar-data";
 import { FaAngleRight } from "react-icons/fa6";
 import { useState } from "react";
 import clsx from "clsx";
 import React from "react";
 
 interface SidebarProps {
-  menuData?: SidebarItemType[];
+  menuData?: SidebarItem[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ menuData = sidebarData }) => {
   console.log('render');
 
-  const renderMenu = (items: SidebarItemType[]) => {
+  const renderMenu = (items: SidebarItem[]) => {
     return (
       <ul className="flex flex-col">
         {items.map((item) => (
@@ -30,10 +30,10 @@ const Sidebar: React.FC<SidebarProps> = ({ menuData = sidebarData }) => {
 };
 
 
-const MenuItem: React.FC<{ item: SidebarItemType }> = ({ item }) => {
+const MenuItem: React.FC<{ item: SidebarItem }> = ({ item }) => {
   const [isExpanded, setExpanded] = useState(false);
 
-  const hasChildren = item.modulePrivilege?.length > 0;
+  const hasChildren = (item?.children?.length ?? 0) > 0;
 
   const location = useLocation();
   const isActive = item.url === location.pathname
@@ -57,7 +57,7 @@ const MenuItem: React.FC<{ item: SidebarItemType }> = ({ item }) => {
 
       {hasChildren && isExpanded && (
         <ul className="ml-4 border-l pl-2">
-          {item.modulePrivilege.map((child) => (
+          {(item.children ?? []).map((child) => (
             <MenuItem key={child.id} item={child} />
           ))}
         </ul>
