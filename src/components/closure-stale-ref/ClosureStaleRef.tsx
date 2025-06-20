@@ -20,7 +20,7 @@ export default function ClosureStaleRef() {
       <input
         type='text'
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
         className='border-2 border-slate-500 p-2 rounded-md'
       />
       <Expensive clickHandler={handleSend} />

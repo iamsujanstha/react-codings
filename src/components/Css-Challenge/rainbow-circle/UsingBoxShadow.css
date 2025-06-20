@@ -1,0 +1,19 @@
+.inner {
+  --circle-thickness: 25px;
+  --purple-size: calc(var(--circle-thickness) *2);
+  --offset: calc(var(--circle-thickness)*5);
+
+  position: relative;
+  left: var(--offset);
+  top: var(--offset);
+  border-radius: 50%;
+  background-color: blueviolet;
+  width: var(--purple-size);
+  height: var(--purple-size);
+
+  box-shadow: 0 0 0 var(--circle-thickness) blue,
+    0 0 0 calc(var(--circle-thickness)*2) green,
+    0 0 0 calc(var(--circle-thickness)*3) orange,
+    0 0 0 calc(var(--circle-thickness)*4) yellow,
+    0 0 0 calc(var(--circle-thickness)*5) red;
+}

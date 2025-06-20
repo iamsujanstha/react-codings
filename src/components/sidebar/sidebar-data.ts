@@ -86,5 +86,35 @@ export const sidebarData: SidebarItem[] = [
     url: '/popover',
     parentId: null,
     icon: 'popover-icon'
-  }
+  },
+  {
+    id: "pagination",
+    nameEnglish: "Pagination",
+    url: '/pagination',
+    parentId: null,
+    icon: 'popover-icon'
+  },
+  {
+    id: "css-challenge",
+    nameEnglish: "CSS Challenge",
+    url: '/css-challenge',
+    parentId: null,
+    icon: 'css-icon',
+    children: [
+      {
+        id: 'rainbow-circle',
+        nameEnglish: 'Rainbow Circle',
+        url: 'css-challenge/rainbow-circle',
+        parentId: 'css-challenge',
+        icon: 'rainbow-icon'
+      },
+      {
+        id: 'pig-face',
+        nameEnglish: 'Pig Face',
+        url: 'css-challenge/pig-face',
+        parentId: 'css-challenge',
+        icon: 'pig-icon'
+      }
+    ]
+  },
 ];

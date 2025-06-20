@@ -1,0 +1,39 @@
+:root {
+  --circle-thickness: 25px;
+}
+
+.rainbow {
+  border-radius: 50%;
+}
+
+.outer {
+  --salmon-size: calc(var(--circle-thickness)*8);
+
+  background-color: salmon;
+  width: var(--salmon-size);
+  height: var(--salmon-size);
+  padding: var(--circle-thickness);
+  border: var(--circle-thickness) solid red;
+  box-sizing: content-box;
+}
+
+.middle {
+  --green-size: calc(var(--circle-thickness)*4);
+
+  background-color: green;
+  width: var(--green-size);
+  height: var(--green-size);
+  border: var(--circle-thickness) solid yellow;
+  padding: var(--circle-thickness);
+  box-sizing: content-box;
+}
+
+.inner {
+  --purple-size: calc(var(--circle-thickness) *2);
+
+  background-color: blueviolet;
+  width: var(--purple-size);
+  height: var(--purple-size);
+  border: var(--circle-thickness) solid blue;
+  box-sizing: content-box;
+}

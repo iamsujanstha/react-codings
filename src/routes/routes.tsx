@@ -11,6 +11,9 @@ import InfiniteScrolling from "../pages/infinite-scrolling/scroll-height/Infinit
 import ObserverInfiniteScroll from "../pages/infinite-scrolling/intersection-observer/ObserverInfiniteScroll";
 import ClosureStaleRef from "../components/closure-stale-ref/ClosureStaleRef";
 import PopoverPage from "../pages/popover-page/PopoverPage";
+import Pagination from "../components/pagination/Pagination";
+import RainBowCircle from "../components/Css-Challenge/rainbow-circle/RainBowCircle";
+import PigFace from "../components/Css-Challenge/pig-face/PigFace";
 
 export const router = [
   {
@@ -64,6 +67,18 @@ export const router = [
       {
         path: '/popover',
         element: <PopoverPage />
+      },
+      {
+        path: '/pagination',
+        element: <Pagination />
+      },
+      {
+        path: '/css-challenge/rainbow-circle',
+        element: < RainBowCircle />
+      },
+      {
+        path: '/css-challenge/pig-face',
+        element: < PigFace />
       },
     ],
   },

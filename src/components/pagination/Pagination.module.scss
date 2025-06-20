@@ -1,0 +1,26 @@
+.tableContainer {
+  overflow-x: auto;
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+
+    th,
+    td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #c8e4ff;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    tr:hover {
+      background-color: #f8f8fa;
+    }
+  }
+}

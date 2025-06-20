@@ -1,16 +1,21 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { NuqsAdapter } from 'nuqs/adapters/next'
 import './App.css'
 import { router } from './routes/routes'
 import { NavProvider } from './contexts/nav-context'
+import { useQuery } from '@tanstack/react-query'
+
 
 function App() {
+  const { data } = useQuery({
+    queryKey: ['book'],
+    queryFn: () => Promise.resolve("The habbit")
+  })
+  console.log(data)
   return (
     <NavProvider>
-      <NuqsAdapter>
-        <RouterProvider router={createBrowserRouter(router)} />
-      </NuqsAdapter>
+      <RouterProvider router={createBrowserRouter(router)} />
     </NavProvider>
+
   )
 }
 
