@@ -31,15 +31,16 @@ const StepperForm = () => {
             key={index}
             className={[
               index === activeStep && 'selected',
-              visitedSteps.current.has(index) && 'visited'
+              visitedSteps.current.has(index) && index !== activeStep && 'visited'
             ].filter(Boolean).join(' ')}
 
             onClick={() => {
               if (visitedSteps.current.has(index)) {
+                visitedSteps.current.add(activeStep);
                 setActiveStep(index);
               }
-            }
-            }
+            }}
+
           >
             {step}
           </li>
