@@ -29,7 +29,11 @@ const StepperForm = () => {
         {steps.map((step, index) => (
           <li
             key={index}
-            className={index === activeStep ? 'selected' : '' + (visitedSteps.current.has(index) ? ' visited' : '')}
+            className={[
+              index === activeStep && 'selected',
+              visitedSteps.current.has(index) && 'visited'
+            ].filter(Boolean).join(' ')}
+
             onClick={() => {
               if (visitedSteps.current.has(index)) {
                 setActiveStep(index);
@@ -42,26 +46,29 @@ const StepperForm = () => {
         ))}
       </ol>
 
-      {activeStep === 0 && (
-        <ul>
-          <li className="blue-product">
-            <input type="checkbox" id="product1" />
-            <label htmlFor="product1">Product 1</label>
-          </li>
-          <li className="red-product">
-            <input type="checkbox" id="product2" />
-            <label htmlFor="product2">Product 2</label>
-          </li>
-          <li className="orange-product">
-            <input type="checkbox" id="product3" />
-            <label htmlFor="product3">Product 3</label>
-          </li>
-          <li className="green-product">
-            <input type="checkbox" id="product4" />
-            <label htmlFor="product4">Product 4</label>
-          </li>
-        </ul>
-      )}
+      <div className="step-body">
+        {activeStep === 0 && (
+          <ul>
+            <li className="blue-product">
+              <input type="checkbox" id="product1" />
+              <label htmlFor="product1">Product 1</label>
+            </li>
+            <li className="red-product">
+              <input type="checkbox" id="product2" />
+              <label htmlFor="product2">Product 2</label>
+            </li>
+            <li className="orange-product">
+              <input type="checkbox" id="product3" />
+              <label htmlFor="product3">Product 3</label>
+            </li>
+            <li className="green-product">
+              <input type="checkbox" id="product4" />
+              <label htmlFor="product4">Product 4</label>
+            </li>
+          </ul>
+        )}
+      </div>
+
 
       <button onClick={handleContinue}>{activeStep === steps.length - 1 ? "Start" : "Next"}</button>
     </div>

@@ -16,6 +16,12 @@
   flex-direction: column;
   gap: 12px;
 
+  .step-body {
+    min-height: 300px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+  }
+
 
   ol {
     display: flex;
@@ -59,12 +65,14 @@
     .selected::before {
       background-color: rgb(47, 47, 255);
       color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .visited::before {
       background-color: #079f44;
       color: white;
       cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
   }
 
