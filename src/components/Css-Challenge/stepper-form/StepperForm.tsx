@@ -27,7 +27,16 @@ const StepperForm = () => {
     <div id='wrapper'>
       <ol>
         {steps.map((step, index) => (
-          <li key={index} className={index === activeStep ? 'selected' : '' + (visitedSteps.current.has(index) ? ' visited' : '')}>
+          <li
+            key={index}
+            className={index === activeStep ? 'selected' : '' + (visitedSteps.current.has(index) ? ' visited' : '')}
+            onClick={() => {
+              if (visitedSteps.current.has(index)) {
+                setActiveStep(index);
+              }
+            }
+            }
+          >
             {step}
           </li>
         ))}

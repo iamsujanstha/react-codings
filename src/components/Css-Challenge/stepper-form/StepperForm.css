@@ -64,6 +64,7 @@
     .visited::before {
       background-color: #079f44;
       color: white;
+      cursor: pointer;
     }
   }
 
