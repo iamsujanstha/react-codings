@@ -14,6 +14,7 @@ import PopoverPage from "../pages/popover-page/PopoverPage";
 import Pagination from "../components/pagination/Pagination";
 import RainBowCircle from "../components/Css-Challenge/rainbow-circle/RainBowCircle";
 import PigFace from "../components/Css-Challenge/pig-face/PigFace";
+import StepperForm from "../components/Css-Challenge/stepper-form/StepperForm";
 
 export const router = [
   {
@@ -80,6 +81,10 @@ export const router = [
         path: '/css-challenge/pig-face',
         element: < PigFace />
       },
+      {
+        path: '/css-challenge/stepper-form',
+        element: <StepperForm />
+      }
     ],
   },
   {

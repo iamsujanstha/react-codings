@@ -1,0 +1,118 @@
+:root {
+  --wrapper-border-radius: 12px;
+  --wrapper-padding: 12px;
+  --wrapper-background-color: #f3f3f3;
+
+  --circle-width: 40px;
+  --circle-radius: calc(var(--circle-width) / 2);
+  --circle-border-width: 4px;
+}
+
+#wrapper {
+  border-radius: var(--wrapper-border-radius);
+  padding: var(--wrapper-padding);
+  background-color: var(--wrapper-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+
+  ol {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    counter-reset: list-items;
+
+    li {
+      flex-basis: 100%;
+      text-align: center;
+      position: relative;
+
+      &::before {
+        counter-increment: list-items;
+        content: counter(list-items);
+        /* to make block element */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--circle-width);
+        height: var(--circle-width);
+        border-radius: 50%;
+        background-color: #ffffff;
+        border: 2px solid #767474;
+        margin: 0 auto 10px auto;
+        font-size: 18px;
+      }
+
+      &:not(:first-of-type)::after {
+        content: '';
+        display: block;
+        width: calc(100% - var(--circle-width));
+        height: 2px;
+        background-color: #767474;
+        position: absolute;
+        top: calc(var(--circle-width) / 2);
+        left: calc(-50% + var(--circle-width) / 3);
+      }
+    }
+
+    .selected::before {
+      background-color: rgb(47, 47, 255);
+      color: white;
+    }
+
+    .visited::before {
+      background-color: #079f44;
+      color: white;
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      gap: 10px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .blue-product {
+      border-left: rgb(96, 96, 244) 5px solid;
+      color: rgb(70, 70, 222);
+    }
+
+    .red-product {
+      border-left: rgb(196, 38, 7) 5px solid;
+      color: rgb(187, 36, 5);
+    }
+
+    .orange-product {
+      border-left: #e77218 5px solid;
+      color: rgb(222, 143, 70);
+    }
+
+    .green-product {
+      border-left: #00a02b 5px solid;
+      color: #00a02b;
+    }
+  }
+
+  button {
+    display: block;
+    margin-left: auto;
+    padding: 8px 12px;
+    background-color: #043cd6;
+    border-radius: 10px;
+    color: white;
+  }
+}

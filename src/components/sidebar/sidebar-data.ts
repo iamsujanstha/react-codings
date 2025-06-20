@@ -114,6 +114,13 @@ export const sidebarData: SidebarItem[] = [
         url: 'css-challenge/pig-face',
         parentId: 'css-challenge',
         icon: 'pig-icon'
+      },
+      {
+        id: 'stpper-form',
+        nameEnglish: 'Stepper Form',
+        url: 'css-challenge/stepper-form',
+        parentId: 'css-challenge',
+        icon: 'form-icon'
       }
     ]
   },
